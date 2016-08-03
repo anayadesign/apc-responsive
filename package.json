@@ -1,0 +1,25 @@
+{
+  "name": "apc-responsive",
+  "version": "1.0.0",
+  "description": "Apc responsive header/footer content",
+  "main": "/scripts/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artdotcom/apc-responsive.git"
+  },
+  "author": "David Anaya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/artdotcom/apc-responsive/issues"
+  },
+  "homepage": "https://github.com/artdotcom/apc-responsive#readme",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-stylus": "^2.5.0",
+    "gulp-watch": "^4.3.9"
+  }
+}

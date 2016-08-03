@@ -1,0 +1,152 @@
+/*
+====================
+Styles for main.css file
+====================
+*/
+.mobile {
+  display: block;
+}
+.mobile-inline {
+  display: inline-block;
+}
+.desktop {
+  display: none;
+}
+.desktop-inline {
+  display: none;
+}
+.both-inline {
+  display: inline;
+}
+header {
+  width: 100%;
+  background: #333;
+  color: #fff;
+  font-size: 16px;
+}
+@media screen and (min-width: 1008px) {
+  .mobile {
+    display: none;
+  }
+  .mobile-inline {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+  .desktop-inline {
+    display: inline;
+  }
+  header {
+    max-width: 1008px;
+    margin: 0 auto;
+    background: #c82020;
+    color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+}
+header nav:after {
+  display: table;
+  content: '';
+  clear: both;
+}
+.both.logo {
+  width: 50%;
+  float: left;
+}
+.logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 1008px) {
+  .both.logo {
+    width: auto;
+  }
+}
+nav.nav-menu {
+  background: #5f5f5f;
+  background: linear-gradient(to bottom, #5f5f5f 0, #373737 100%);
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  top: 0;
+  left: -80%;
+  background: #bbb;
+  padding: 0 0 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -moz-box-shadow: 0 0 5px #bbb;
+  box-shadow: 0 0 5px #bbb;
+  border-right: 1px solid #bbb;
+  -webkit-text-size-adjust: none;
+}
+@media screen and (min-width: 1008px) {
+  nav.nav-menu {
+    position: relative;
+    left: 0;
+    width: 100%;
+  }
+  .nav-menu ul,
+  .nav-menu li {
+    display: inline-block;
+  }
+  .nav-menu .dropdown-tray {
+    display: none;
+  }
+}
+.nav-main .mobile {
+  float: left;
+}
+.hamburger,
+.search-mobile {
+  width: 44px;
+  text-align: center;
+  padding-top: 10px;
+}
+#pageContainer.off-canvas-active .nav-menu {
+  left: 0;
+}
+#pageContainer.off-canvas-active #main,
+#pageContainer.off-canvas-active .nav-main {
+  left: 80%;
+  position: relative;
+}
+@media screen and (min-width: 1008px) {
+  .menu {
+    padding: 0;
+    margin: 0;
+  }
+  .accordion-section {
+    display: block !important;
+    float: left !important;
+    position: relative;
+  }
+  .accordion-section .accordion-section-content {
+    display: none;
+    position: absolute;
+  }
+  .dropdown__list {
+    padding: 0;
+    margin: 0;
+  }
+  .dropdown__list li {
+    display: block;
+  }
+  .accordion-section:hover .accordion-section-content {
+    display: block;
+  }
+  .accordion-section-title,
+  .menu > li a {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+  }
+}
