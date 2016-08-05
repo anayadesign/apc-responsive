@@ -1,17 +1,3 @@
-<art:head>
-  <script>
-    $(function() {
-      // Toggle Nav on Click
-      $(document).on('click', '.off-canvas-trigger', function() {
-        var transitionClass = $(this).data('transition');
-        $('#global-center, #global-center + .tpl_cb').addClass(transitionClass);
-        $('#pageContainer').toggleClass('off-canvas-active');
-        $('body').toggleClass('bodyAllowHelp');
-        return false;
-      });
-    });
-  </script>
-</art:head>
 <art:body>
   <art:cmsContentBlock path="content-blocks/common/header/responsive/other/svg-library"></art:cmsContentBlock>
   <nav class="nav-main">
