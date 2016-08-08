@@ -14,4 +14,4 @@ Our AllPosters sites aren't responsive. This code will make them responsive. :ta
 
 ## Main packages
 * [Stylus](http://stylus-lang.com/) - css precompiler
-* [Nunjucks](https://mozilla.github.io/nunjucks/) by Mozilla
+* [Nunjucks](https://mozilla.github.io/nunjucks/) by Mozilla - Templating
