@@ -27,7 +27,7 @@ gulp.task('styles', function () {
 // Templates
 gulp.task('nunjucks', function() {
   // Gets .html and .nunjucks files in pages
-  return gulp.src('source/pages/**/*.+(html|nunjucks)')
+  return gulp.src('source/pages/**/*.+(html|njk)')
   // Renders template with nunjucks
   .pipe(nunjucksRender({
       path: ['source/templates']
