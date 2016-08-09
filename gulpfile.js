@@ -1,39 +1,72 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var concat = require('gulp-concat');
+var stylus = require('gulp-stylus');
 var nunjucksRender = require('gulp-nunjucks-render');
 var data = require('gulp-data');
-//var watch = require('gulp-watch');
-//gulp-watch might watch for new files created
-var stylus = require('gulp-stylus');
+var watch = require('gulp-watch');
 
-// Scripts and stuff
+//serve it
+var browserSync = require('browser-sync').create();
+var reload = browserSync.reload;
+
+// Concatenate js
 gulp.task('scripts', function() {
-  return gulp.src('./source/scripts/**/*.js')
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest('./dest/scripts'));
+    return gulp.src('./source/scripts/**/*.js')
+        .pipe(concat('main.js'))
+        .pipe(gulp.dest('./dest/scripts'));
 });
 
 // Get one .styl file and render
-gulp.task('styles', function () {
-  return gulp.src('./source/stylus/index.styl')
-    .pipe(stylus())
-    .pipe(gulp.dest('./dest/css'));
+gulp.task('styles', function() {
+    return gulp.src('./source/stylus/index.styl')
+        .pipe(stylus())
+        .pipe(gulp.dest('./dest/css'));
 });
 
-gulp.task('watch:styles', function(){
-  gulp.watch('./source/stylus/**/*.styl', ['styles']);
-});
-
+// Templates
 gulp.task('nunjucks', function() {
-  // Gets .html and .nunjucks files in pages
-  return gulp.src('source/pages/**/*.+(html|nunjucks)')
-  // Renders template with nunjucks
-  .pipe(nunjucksRender({
-      path: ['source/templates']
-    }))
-  // output files in source folder
-  .pipe(gulp.dest('dest'))
+    // Gets .html and .nunjucks files in pages
+    return gulp.src('source/pages/**/*.+(html|njk)')
+        // Renders template with nunjucks
+        .pipe(nunjucksRender({
+            path: ['source/templates']
+        }))
+        .pipe(gulp.dest('dest'))
+});
+
+// Check if `scripts` task is complete before browserReload
+gulp.task('js-watch', ['scripts'], function(done) {
+    gulp.watch('./source/scripts/**/*.js', ['scripts']);
+    browserSync.reload();
+    done();
+});
+// Check if `styles` task is complete before browserReload
+gulp.task('css-watch', ['styles'], function(done) {
+    gulp.watch('./source/stylus/**/*.styl', ['styles']);
+    browserSync.reload();
+    done();
+});
+// Check if `nunjucks` task is complete before browserReload
+gulp.task('njk-watch', ['nunjucks'], function(done) {
+    gulp.watch('./source/+(templates|pages)/**/*.+(html|njk)', ['nunjucks']);
+    browserSync.reload();
+    done();
+});
+// use default task to launch Browsersync and watch scripts and styles
+gulp.task('serve', ['scripts', 'styles', 'nunjucks'], function() {
+
+    browserSync.init({
+        server: {
+            baseDir: "./dest"
+        }
+    });
+
+    // add browserSync.reload to the tasks array to make
+    // all browsers reload after tasks are complete.
+    gulp.watch("./source/scripts/**/*.js", ['js-watch']);
+    gulp.watch("./source/stylus/**/*.styl", ['css-watch']);
+    gulp.watch("./source/+(templates|pages)/**/*.+(html|njk)", ['njk-watch']);
 });
 
 gulp.task('default', ['scripts', 'styles', 'nunjucks']);

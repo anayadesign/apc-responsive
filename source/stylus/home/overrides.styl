@@ -1,18 +1,241 @@
-#pageContainer
-  width: 100%
+/*CSS OVERRIDES*/
+#pageContainer {
+    width: 100%;
+}
+#main, .cellmaincontent {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+.tpl-cb {
+    width: 100%;
+}
+#RecentlyViewedModule {
+    display: none;
+}
+@media screen and (max-width: 1008px) {
+    #css-toolbar {
+        display: none;
+    }
+    #bestSellerContainer {
+        display: none;
+    }
+    .MyGalleriesTrayModuleContainer {
+        display: none;
+    }
+}
+/*END OVERRIDES*/
 
-#main, .cellmaincontent
-  max-width: 100%
-  width: 100%
-  margin: 0 auto
-  padding-top: 0
-  padding-right: 0
-  padding-bottom: 0
-  padding-left: 0
+/*COMMON CSS*/
+.home{
+    font: 36px/1 $font-family-brand-heading
+    text-transform: uppercase;
+    color: #000;
+    border-bottom: solid 1px #ddd;
+    margin: 12px 0 12px;
+}
+/*Common CSS Media Queries*/
+@media screen and (max-width: 1008px) {
+    .home h1 {
+        padding-left: 12px;
+    }
+}
+/*End Common CSS*/
 
-.tpl-cb
-  width: 100%
+/*Hereos Media Queries*/
+@media only screen and (min-width: 667px) {
+    .heroMain {
+        float: left;
+        width: 50%;
+        margin: 0;
+    }
+    .heroMain a {
+        margin: 0 5px 0 0;
+    }
+}
+.hero2 {
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+}
+.hero2 a {
+    /*background-color: #7f99b0;*/
+}
+@media only screen and (min-width: 667px) {
+    .hero2 {
+        float: right;
+        margin: 0;
+        width: 50%;
+    }
+    .hero2 a {
+        margin: 0 0 10px 5px;
+    }
+}
+.hero3 {
+    width: 100%;
+    display: block
+}
+@media only screen and (min-width: 667px) {
+    .hero3 {
+        float: right;
+        width: 50%;
+    }
+    .hero3 a {
+        margin: 0 0 0 5px;
+    }
+}
+/*End Heroes Media Queries*/
 
-#RecentlyViewedModule
-  display: none
-  display: none
+/*Media Queries for HOT PRODUCTS*/
+.hotprod a {
+    position: relative;
+    height: 236px;
+    width: 32%;
+    margin-right: 2%;
+float:left;
+}
+@media only screen and (max-width: 1007px) {
+    .home {
+        padding-left: 12px;
+    }
+}
+@media only screen and (max-width: 890px) {
+    .hotprod a {
+        height: 225px;
+    }
+}
+@media only screen and (max-width: 750px) {
+    .hotprod a {
+        height: 200px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .hotprod a {
+        height: 175px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .hotprod a {
+        height: 145px;
+    }
+}
+/*END HOT PRODUCTS*/
+
+/*Still Looking*/
+@media only screen and (min-width:720px) {
+    .sl-wrapper {
+        width: 91%;
+        margin: 0 auto;
+    }
+    .sl-text {
+        float: left;
+        padding: 0 0 10px 25px;
+        width: 220px;
+    }
+    .sl-text h2 {
+        font: 400 32px/85% $font-family-brand-heading
+        margin: 30px 0 5px;
+        padding: 0;
+    }
+    .sl-text p {
+        font: italic 12px/135% $font-family-text
+        margin: 0;
+        padding: 0;
+    }
+}
+/*End Still Looking*/
+/*Value Props*/
+@media only screen and (max-width:1000px) {
+    .vp-title .vp-cta {
+        position: relative;
+        margin-left: 10px;
+        right: 0;
+        bottom: 0;
+        margin-top: 5px;
+    }
+}
+@media only screen and (max-width:675px) {
+    #valueprop1, #valueprop2, #valueprop3 {
+        width: 324px;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+    #valueproposition {
+        height: 770px;
+    }
+}
+/*End Value Props*/
+
+/*Bottom Nav*/
+@media screen and (max-width: 1008px){
+  #browseContainer{
+    width: 97%!important;
+  }
+}
+@media screen and (min-width: 480px) {
+  .browseList {
+    width: 33.333%;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .browseList {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .browseList {
+    width: 50%;
+  }
+}
+
+.browseList-double {
+  float: none;
+  width: 100%;
+}
+
+@media screen and (min-width: 1008px) {
+  .browseList {
+    width: 14.2857%;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  .browseList-double {
+    width: 28.5714%;
+    float: left;
+  }
+}
+
+.browseList-double ul {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+}
+
+@media screen and (min-width: 480px) {
+  .browseList-double ul {
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .browseList-double ul {
+    -webkit-column-count: 5;
+       -moz-column-count: 5;
+  }
+}
+
+@media screen and (min-width: 1008px) {
+  .browseList-double ul {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+  }
+}
+/*End Bottom Nav*/

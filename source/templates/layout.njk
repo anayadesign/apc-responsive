@@ -1,0 +1,18 @@
+<!-- layout.njk -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {%include 'partials/meta.njk' %}
+  {%include 'partials/links.njk' %}
+
+</head>
+<body id="mainBody">
+  <div id="pageContainer">
+    <!-- You write code for this content block in another file -->
+    {% block content %} {% endblock %}
+  </div>
+
+  {%include 'partials/scripts.njk' %}
+</body>
+</html>
