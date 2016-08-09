@@ -3,22 +3,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>AllPosters.com - The World's Largest Poster and Print Store!</title>
-  <meta name="title" content="AllPosters.com - The World's Largest Poster and Print Store!">
-  <meta name="description" content="Over 500,000 Posters &amp; Art Prints, Movie Posters, Vintage Posters, Motivational Posters &amp; more. Value Framing, Fast Delivery, 100% Satisfaction Guarantee.">
-  <meta name="keywords" content="Posters, Prints, Art Prints, Photos">
-  <meta name="ROBOTS" content="INDEX, FOLLOW, NOODP">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%include 'partials/meta.njk' %}
+  {%include 'partials/links.njk' %}
 
-  <meta property="og:title" content="AllPosters.com - The World's Largest Poster and Print Store!">
-  <meta property="og:url" content="http://www.allposters.com/">
-
-  <link rel="canonical" href="http://www.allposters.com/">
-  <link rel="stylesheet" type="text/css" href="http://www.allposters.com/cdn/1608/Applications/adcNet/main-apc-min.css">
-  <link rel="stylesheet" type="text/css" href="http://www.allposters.com/cdn/1608/Applications/adcNet/mg-apc-min.css?v=1608">
-
-  <link rel="stylesheet" href="css/index.css">
 </head>
 <body id="mainBody">
   <div id="pageContainer">
@@ -26,6 +13,6 @@
     {% block content %} {% endblock %}
   </div>
 
-  <script type="text/javascript" src="http://www.allposters.com/cdn/1608/Applications/adcNet/jquery-apc-min.js?v=1608"></script>
+  {%include 'partials/scripts.njk' %}
 </body>
 </html>
