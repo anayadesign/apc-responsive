@@ -1,0 +1,231 @@
+<art:head>
+  <art:cmsContentBlock path="content-blocks/common/js/emaillightbox"></art:cmsContentBlock>
+  <style>
+  .email-lb-bg {
+    top: 150px;
+    width: 75%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    left: calc(50% - 37.5%)!important;
+    background-color: #fff;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #848484;
+    font-size: 14px;
+    text-align: center;
+    display: none
+  }
+  @media screen and (min-width: 940px) {
+    .email-lb-bg {
+      max-width: 706px;
+      width: 706px;
+      left: calc(50% - 353px)!important;
+    }
+  }
+
+    img {
+      border: none;
+      outline: 0
+    }
+
+    .email-lb-cont {
+      margin: 0
+    }
+    .topheader {
+      background-color: #e5e5e5;
+      font-family: FetteEngschrift, 'Fette Engschrift', Fette, Arial, sans-serif!important;
+      color: #000;
+      font-size: 72px;
+      text-align: center;
+      position: relative;
+      padding: 24px 12px;
+    }
+    .email-lb-close {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 0;
+      cursor: pointer;
+    }
+
+    .email-lb-form {
+      display: block;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .email-lb-text {
+      display: block;
+      text-align: center;
+      margin: 18px 0 0;
+      color: #000;
+      font-size: 42px;
+      font-family: FetteEngschrift, 'Fette Engschrift', Fette, Arial, sans-serif!important
+    }
+
+    .makeitblue {
+      color: #00b9ef
+    }
+
+    .email-lb-blk {
+      color: #000;
+      font-weight: 700
+    }
+
+    .email-lb-err-incorrect,
+    .email-lb-err-not-match {
+      color: red;
+      font-size: 11px;
+      display: none
+    }
+
+    .email-lb-input1,
+    .email-lb-input2 {
+      color: #888;
+      box-sizing: border-box;
+      font-size: 16px;
+      background-color: #f1f1f1;
+      height: 100%;
+      border: 1px solid #ccc;
+      padding: 11px 0 11px 5px;
+      font-family: Helvetica,Arial,sans-serif;
+      width: 100%;
+    }
+    @media screen and (min-width: 452px) {
+      .email-lb-input1,
+      .email-lb-input2 {
+        width: 75%;
+        float: left;
+      }
+    }
+
+    .email-lb-form-text {
+      color: #888;
+      font-size: 12px;
+      margin: 4px 0
+    }
+
+    form#lb-email-form {
+      margin: 0
+    }
+    form#lb-email-form:after {
+      clear: both;
+      content: '';
+      display: table;
+    }
+
+    form#lb-email-form .button {
+      width: 100%;
+      height: 100%;
+      border: 1px solid transparent !important
+      box-sizing: border-box;
+      background-color: #d8dd37;
+      color: #000!important;
+      font-weight: 400;
+      font-size: 26px;
+      border: 0;
+      cursor: pointer;
+      font-family: FetteEngschrift, 'Fette Engschrift', Fette, Arial, sans-serif!important;
+    }
+    @media screen and (min-width: 452px) {
+      form#lb-email-form .button {
+        width: 25%;
+        float: right;
+      }
+    }
+
+    form#lb-email-form .button:hover {
+      background: #fff!important;
+      color: #000!important;
+      border: 1px solid #000!important
+    }
+
+    .email-lb-btn {
+      margin: 0;
+      background-color: #fff
+    }
+
+    .email-lb-btm {
+      width: 280px;
+      display: block;
+      margin-top: 12px;
+      text-align: center;
+      font-color: #888;
+      font-size: 12px
+    }
+
+    div#emailPopUp {
+      opacity: 0
+    }
+    div#emailPopUp.core_lightbox {
+      opacity: .7!important
+    }
+
+    :focus, input:focus, textarea:focus {
+      outline: 0
+    }
+
+    .button::-moz-focus-inner {
+      border: 0
+    }
+
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+      .email-lb-close img {
+        margin-top: -2px;
+        vertical-align: middle
+      }
+    }
+
+    .disclaim {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      color: #888;
+      margin-top: 48px
+    }
+
+    .asterisk {
+      color: #000;
+      font-size: 20px;
+      position: relative;
+      top: -15px;
+      left: 2px
+    }
+  </style>
+</art:head>
+<art:body>
+  <art:content rule="cookie$ap$wtVisit_2 !='2' ">
+    <div class="email-lb-bg" style="z-index: 100010; left: 459px; display: none;">
+      <div class="email-lb-cont">
+        <div class="topheader">
+          <div class="email-lb-close">
+            <img border="0" alt="close" src="http://cache1.allpostersimages.com/images/jump_pages/20121011_email_capture/new-close.png">
+          </div>
+          GET IN ON THE GOOD STUFF
+        </div>
+        <div class="email-lb-form">
+          <form action="http://em.allposters.com/pub/rf" method="post" id="lb-email-form">
+            <input type="text" class="email-lb-input1" value="Enter email address" onfocus="if (this.value == 'Enter email address') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email address';}" name="email_address_" size="40">
+            <input type="hidden" value="US" name="country_iso2" id="country_iso2">
+            <input type="hidden" value="allposters.com" name="site_domain" id="site_domain">
+            <input type="hidden" value="I" name="EMAIL_PERMISSION_STATUS_">
+            <input type="hidden" value="I" name="EMAIL_TRIGGER_PERMISSION">
+            <input type="hidden" value="I" name="EMAIL_PROMO_PERMISSION">
+            <input type="hidden" value="en" name="language_iso2" id="language_iso2">
+            <input type="hidden" value="00-000049" name="email_acq_source">
+            <input type="hidden" value="" name="email_acq_dt">
+            <input type="hidden" value="APC" name="brand_id">
+            <input type="hidden" value="X0Gzc2X%3DWQpglLjHJlYQGgDXfgzgoh1l5eFlH6cc90202u6nVwjpnpgHlpgneHmgJoXX0Gzc2X%3DWQpglLjHJlYQGm0zgCWB66ahtnPw1EhchWremDFR" name="_ri_">
+            <input type="submit" value="SUBMIT" class="button email-lb-btn">
+          </form>
+          <span class="email-lb-err-incorrect">Please enter a valid email address.</span>
+          <div class="email-lb-text"> ENJOY <span class="makeitblue">35% OFF</span> YOUR NEXT PURCHASE<span class="asterisk">*</span><br>&amp; EMAIL-EXCLUSIVE DEALS
+          </div>
+          <div class="disclaim">*NEW CUSTOMERS ONLY</div>
+        </div>
+      </div>
+    </div>
+  </art:content>
+</art:body>
