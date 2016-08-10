@@ -14,5 +14,5 @@ Our AllPosters sites aren't responsive. This code will make them responsive. :ta
   * `gulp serve` will run all of the above and launch a live-reloading `browser-sync` window. The task will watch for any changes to .js, .styl, or nunjucks template files, and will reload the browser page after each change.
 
 ## Main packages
-* [Stylus](http://stylus-lang.com/) - css precompiler
+* [Stylus](http://stylus-lang.com/) - css preprocessor
 * [Nunjucks](https://mozilla.github.io/nunjucks/) by Mozilla - Templating
