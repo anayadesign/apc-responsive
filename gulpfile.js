@@ -34,6 +34,8 @@ gulp.task('nunjucks', function() {
         }))
         .pipe(gulp.dest('dest'))
 });
+// Set alias for nunjucks task, REMOVE FOR GULP 4.0
+gulp.task('nun', ['nunjucks']);
 
 // Check if `scripts` task is complete before browserReload
 gulp.task('js-watch', ['scripts'], function(done) {
