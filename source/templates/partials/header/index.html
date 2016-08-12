@@ -40,7 +40,7 @@
   </nav>
   <nav class="nav-menu">
     <!--bottom Header-->
-    <div class="desktop-inline search-desktop"> desktop - searchbar </div>
+    {%include 'partials/header/search.njk' %}
     {% import 'macros/header/loginTray.njk' as loginTray %}
     {{loginTray.login('false')}}
     <ul class="both menu accordion">
