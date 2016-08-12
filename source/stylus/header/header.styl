@@ -43,7 +43,7 @@ header {
   header {
     max-width: 1008px;
     margin: 0 auto;
-    background: #C82020;
+    background: $color-brand-red;
     color: #FFF;
     font-family: $font-family-text
   }
@@ -72,9 +72,7 @@ header nav:after {
   }
 }
 
-nav.nav-menu {
-  background: #5f5f5f;
-  background: linear-gradient(to bottom, #5f5f5f 0, #373737 100%);
+.nav-menu {
   width: 80%;
   height: 100%;
   position: absolute;
@@ -85,28 +83,28 @@ nav.nav-menu {
   background: #BBB;
   padding: 0 0 30px;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
+          font-smoothing: antialiased;
   -moz-box-shadow: 0 0 5px #bbb;
-  box-shadow: 0 0 5px #bbb;
+       box-shadow: 0 0 5px #bbb;
   border-right: 1px solid #bbb;
   -webkit-text-size-adjust: none;
 }
 
 @media screen and (min-width: 1008px) {
-  nav.nav-menu {
+  .nav-menu {
+    background: #5f5f5f;
+    background: linear-gradient(to bottom, #5f5f5f 0, #373737 100%);
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: none;
     position: relative;
     left: 0;
     width: 100%;
-  }
-  .nav-menu ul,
-  .nav-menu li {
-    display: inline-block;
-  }
-  .nav-menu .dropdown-tray {
-    display: none;
+    overflow: visible;
+    padding: 0;
   }
 }
 
@@ -132,38 +130,6 @@ nav.nav-menu {
 }
 
 
-@media screen and (min-width: 1008px){
-.menu {
-    padding: 0;
-    margin: 0;
-}
-.accordion-section {
-    display: block !important;
-    float: left !important;
-    position:relative;
-}
-.accordion-section .accordion-section-content {
-    display: none;
-    position: absolute;
-}
-.dropdown__list {
-    padding: 0;
-    margin: 0;
-}
-.dropdown__list li {
-    display: block;
-}
-.accordion-section:hover .accordion-section-content {
-    display: block;
-}
-.accordion-section-title,
-.menu > li a {
-    font-family: $font-family-text
-    font-size: 12px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-}
-}
 @import "dropdown"
 @import "loginTray"
+@import "search"
