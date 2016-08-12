@@ -1,0 +1,164 @@
+ul,
+li {
+  list-style-type: none;
+}
+ul.accordian {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-padding-start: 0px;
+}
+.nav-top__heading {
+  background: #5f5f5f;
+  background: linear-gradient(to bottom, #5f5f5f 0, #373737 100%);
+  padding: 10px 10px 10px 10px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+}
+.nav-top__heading a {
+  font-weight: bold;
+  border-left: 1px solid #444;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+.dropdown__list {
+  background-color: rgba(255,255,255,0.7);
+  border: 1px solid #7686a0;
+  padding-left: 0px;
+}
+.dropdown__list li{
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.dropdown__list li a {
+  color: #1a5d82;
+  text-decoration: none;
+  padding-left: 10px;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+.dropdown__list li a:hover{
+  text-decoration:underline;
+}
+
+#photo{
+  width: 185px;
+}
+.headerLine {
+    padding-bottom: 5px;
+    margin-left: 5px;
+margin-right: 5px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+@media screen and (max-width: 1008px) {
+  .accordian {
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    list-style-type: none;
+    padding: 0;
+    box-shadow: 0 0 5px #bbb;
+  }
+  .accordian,
+  .accordian * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .accordian-section-content {
+    clear: both;
+  }
+  .nav-menu h2,
+  .nav-menu h3 {
+    font-family: "Glyddon";
+    font-weight: normal;
+    font-size: 24px;
+    line-height: normal;
+  }
+  .nav-top__heading {
+    margin: 0;
+    border-bottom: 1px solid #9a9899;
+    font-weight: 400;
+    background: none;
+    padding: 0;
+  }
+  .nav-top__heading a {
+    width: 100%;
+    padding: 15px 15px 15px 30px;
+    display: inline-block;
+    background-color: #fff;
+    transition: all linear 0.15s;
+    text-decoration: none;
+    color: #2b2b2b;
+    font-family: "Glyddon", Helvetica;
+    font-size: 20px;
+    font-weight: normal;
+    overflow: visible;
+    border-left: none;
+  }
+  .nav-top__heading a:hover,
+  .nav-top__heading a:active {
+    color: #30beef;
+    text-decoration: none;
+    border-bottom: 0;
+  }
+  .accordion-section-title:after {
+    float: right;
+    transition: content linear 0.25s;
+    content: url("http://cache1.artprintimages.com/images/header/arrow.svg");
+    display: block;
+    fill: #4d4d4d;
+    width: 7px;
+    height: 7px;
+    margin-top: 5px;
+  }
+  .dropdown {
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #bbb;
+    display: block;
+    font: normal normal 18px/1.4 "Glyddon", Times, serif;
+  }
+  .dropdown__list--borderbottom {
+    border-bottom: 1px solid #999799;
+  }
+  .dropdown__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #efefef;
+    border: none;
+  }
+  .dropdown__list li{
+    padding-top:0px;
+    padding-bottom: 0px;
+  }
+  .dropdown__list li a {
+    display: block;
+    padding: 14px 0 14px 54px;
+    border-top: 1px solid #999799;
+    color: #666;
+    margin-bottom: 0px;
+    text-decoration: none;
+    font-size: 14px;
+    font: normal normal 18px/1.4 "Glyddon", Times, serif;
+  }
+  .dropdown__list li a:hover{
+    text-decoration:none;
+  }
+  .dropdown__list a:hover {
+    background-color: #ddd;
+  }
+  .notop {
+    border-top: 0px !important;
+  }
+  .headerLine{
+    display:none;
+  }
+  #photo{
+    width: 100%;
+  }
+}
