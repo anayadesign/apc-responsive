@@ -1,0 +1,29 @@
+{% macro login(logState='true') %}
+{%if logState == 'true' %}
+<art:content rule="loggedin">
+  <div class="headerValueProp" id="MyA_Acct" style="text-decoration: none;"> My Account
+    <div id="DD_outCont">
+      <div id="DD_inCont">
+        <div id="DD_arw"></div>
+        <div id="DD_inMenu">
+          <div class="DD_link" id="hdr_MyF">My Favorites</div>
+          <div class="DD_wstrip"></div>
+          <div class="DD_link" id="hdr_MyA">Manage Account</div>
+          <div class="DD_wstrip"></div>
+          <div class="DD_link" id="hdr_MyO">My Orders</div>
+          <div class="DD_wstrip"></div>
+          <div class="DD_link" id="hdr_LO">Log Out</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</art:content>
+{% endif %}
+{%if logState == 'false' %}
+<art:content rule="!loggedin">
+  <div id="hdr_signUp" class="headerValueProp">Sign up</div>
+  <div class="valuePropsDividerLog">|</div>
+  <div id="hdr_logIn" class="headerValueProp">Log in</div>
+</art:content>
+{% endif %}
+{% endmacro %}
