@@ -7,23 +7,6 @@ function validateFooterEmail() {
   }
   return moduleForm_I0.submitForm;
 }
-function b() {
-  $(".accordion .accordion-section-title").removeClass("active");
-  $(".accordion .accordion-section-content").slideUp(300).removeClass("open");
-}
-$(".accordion-section-title").click(function(h) {
-  if ((screen.width < 1008) || ($(window).width() < 1008)) {
-    var g = $(this).attr("name");
-    if ($(h.target).is(".active")) {
-      b();
-    } else {
-      b();
-      $(this).addClass("active");
-      $(".accordion " + g).slideDown(300).addClass("open");
-    }
-    h.preventDefault();
-  }
-});
 $('#footer-chervon').click(function(event) {
   event.preventDefault();
 });
