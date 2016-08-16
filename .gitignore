@@ -26,8 +26,8 @@ coverage
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-# Dest directory - for local gulp builds only
-dest
+# Dest directory -  show dest only for gh-pages branch
+# dest
 
 # Dependency directories
 node_modules
