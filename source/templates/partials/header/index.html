@@ -1,5 +1,6 @@
 <art:body>
   <art:cmsContentBlock path="content-blocks/common/header/responsive/other/svg-library"></art:cmsContentBlock>
+  {%include 'partials/header/svg.njk' %}
   <nav class="nav-main">
     <!--Top Header-->
     <div class="mobile hamburger">
@@ -25,117 +26,44 @@
     <div class="both logo"> <img src="http://cache1.allpostersimages.com/images/INTL/allposters/logo/white/r.png" alt="logo" /> </div>
     <div>
       <div class="desktop help"> Need Help? 888-654-0143 | Sign up for Special Offers | Track Your Order | Help | Español </div>
-      <div> <span class="desktop-inline valueprops">Our products | Frames | Favorites | <art:cmsContentBlock path="content-blocks/common/header/responsive/other/valueprops"></art:cmsContentBlock></span> <span class="mobile-inline favorites">favorites</span>
+      <div>
+        <span class="desktop-inline valueprops">Our products | Frames | Favorites | <art:cmsContentBlock path="content-blocks/common/header/responsive/other/valueprops"></art:cmsContentBlock></span> <span class="mobile-inline favorites">favorites</span>
         <div class="headrCart" id="headerCart">
           <a onclick="trackGAEvent('SelectCart','Header');" href="/gallery.asp?startat=/viewcart.asp" style="color: #FFF;">Cart</a>
           <span id="cartCount"> (<span id="cartCountText">0</span>) </span>
         </div>
-          <br>
-          <art:content rule="!loggedin">
-            <div id="hdr_signUp" class="headerValueProp">Sign up</div>
-            <div class="valuePropsDividerLog">|</div>
-            <div id="hdr_logIn" class="headerValueProp">Log in</div>
-          </art:content>
-          <art:content rule="loggedin">
-            <div class="headerValueProp" id="MyA_Acct" style="text-decoration: none;"> My Account
-              <div id="DD_outCont">
-                <div id="DD_inCont">
-                  <div id="DD_arw"></div>
-                  <div id="DD_inMenu">
-                    <div class="DD_link" id="hdr_MyF">My Favorites</div>
-                    <div class="DD_wstrip"></div>
-                    <div class="DD_link" id="hdr_MyA">Manage Account</div>
-                    <div class="DD_wstrip"></div>
-                    <div class="DD_link" id="hdr_MyO">My Orders</div>
-                    <div class="DD_wstrip"></div>
-                    <div class="DD_link" id="hdr_LO">Log Out</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </art:content>
+        {% import 'macros/header/loginMain.njk' as loginMain %}
+        {{loginMain.login('false')}}
       </div>
     </div>
     <art:cmsContentBlock path="content-blocks/common/header/responsive/other/search"></art:cmsContentBlock>
   </nav>
   <nav class="nav-menu">
     <!--bottom Header-->
-    <div class="desktop-inline search-desktop"> desktop - searchbar </div>
-    <art:content rule="!loggedin">
-      <div id="hdr_signUp" class="headerValueProp">Sign up</div>
-      <div class="valuePropsDividerLog">|</div>
-      <div id="hdr_logIn" class="headerValueProp">Log in</div>
-      <!--
-      <div class="dropdown-tray dropdown-tray-loggedout">
-          <a class="tray-button tray-button-help" href="#" onclick="helpClick();">
-          <svg viewBox="0 0 75.8 98.7" aria-labelledby="title desc" fill="#888">
-            <title>Help Icon</title>
-            <desc>A dark-gray phone icon.</desc>
-            <use xlink:href="#icon-phone"></use>
-          </svg>Help</a>
-          <a class="tray-button tray-button-login top_nav_log">
-          <svg viewBox="0 0 11.3 10.8" aria-labelledby="title desc" fill="#888">
-          <title>User icon</title>
-          <desc>A white icon of a site user.</desc>
-          <use xlink:href="#icon-user"></use>
-        </svg>Log in / Signup</a>
-      </div>
-    -->
-    </art:content>
-    <art:content rule="loggedin">
-      <div class="headerValueProp" id="MyA_Acct" style="text-decoration: none;"> My Account
-        <div id="DD_outCont">
-          <div id="DD_inCont">
-            <div id="DD_arw"></div>
-            <div id="DD_inMenu">
-              <div class="DD_link" id="hdr_MyF">My Favorites</div>
-              <div class="DD_wstrip"></div>
-              <div class="DD_link" id="hdr_MyA">Manage Account</div>
-              <div class="DD_wstrip"></div>
-              <div class="DD_link" id="hdr_MyO">My Orders</div>
-              <div class="DD_wstrip"></div>
-              <div class="DD_link" id="hdr_LO">Log Out</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--
-      <div class="dropdown-tray dropdown-tray-loggedin">
-        <a class="tray-button tray-button-help" href="#" onclick="helpClick();">
-          <svg viewBox="0 0 75.8 98.7" aria-labelledby="title desc" fill="#888">
-            <title>Help Icon</title>
-            <desc>A dark-gray phone icon.</desc>
-            <use xlink:href="#icon-phone"></use>
-          </svg>Help
-        </a>
-        <a class="tray-button tray-button-login" id="hdr-new-my-account">
-          <svg viewBox="0 0 11.3 10.8" aria-labelledby="title desc" fill="#888">
-            <title>User icon</title>
-            <desc>A dark-gray icon of a site user.</desc>
-            <use xlink:href="#icon-user"></use>
-          </svg>My Account
-        </a>
-        <a class="tray-button tray-button-login" id="hdr-new-logout">
-          <svg width="38px" height="38px" viewBox="0 0 49.8 48.8">
-          <title>Logout icon</title>
-          <desc>A white logout icon.</desc>
-          <use xlink:href="#icon-logout"></use>
-          </svg>Log Out
-        </a>
-      </div>
-    -->
-    </art:content>
-    <ul class="both menu">
+    {%include 'partials/header/search.njk' %}
+    {% import 'macros/header/loginTray.njk' as loginTray %}
+    {{loginTray.login('false')}}
+    <ul class="both menu accordion">
       <art:cmsContentBlock path="content-blocks/common/header/responsive/menus/subjects"></art:cmsContentBlock>
+      {%include 'partials/header/menus/subjects.html' %}
       <art:cmsContentBlock path="content-blocks/common/header/responsive/menus/art"></art:cmsContentBlock>
+      {%include 'partials/header/menus/art.html' %}
       <art:cmsContentBlock path="content-blocks/common/header/responsive/menus/photography"></art:cmsContentBlock>
+      {%include 'partials/header/menus/photography.html' %}
       <art:cmsContentBlock path="content-blocks/common/header/responsive/menus/t-shirts"></art:cmsContentBlock>
+      {%include 'partials/header/menus/t-shirts.html' %}
       <art:cmsContentBlock path="content-blocks/common/header/responsive/menus/walldecor"></art:cmsContentBlock>
+      {%include 'partials/header/menus/walldecor.html' %}
       <art:cmsContentBlock path="content-blocks/common/header/responsive/menus/novelty"></art:cmsContentBlock>
+      {%include 'partials/header/menus/novelty.html' %}
       <art:cmsContentBlock path="content-blocks/common/header/responsive/menus/shopallcategories"></art:cmsContentBlock>
+      {%include 'partials/header/menus/shopallcategories.html' %}
       <art:cmsContentBlock path="content-blocks/common/header/responsive/menus/new"></art:cmsContentBlock>
+      {%include 'partials/header/menus/new.html' %}
       <art:cmsContentBlock path="content-blocks/common/header/responsive/menus/sale"></art:cmsContentBlock>
+      {%include 'partials/header/menus/sale.html' %}
       <art:cmsContentBlock path="content-blocks/common/header/responsive/menus/myphotos"></art:cmsContentBlock>
+      {%include 'partials/header/menus/myphotos.html' %}
     </ul>
   </nav>
 </art:body>

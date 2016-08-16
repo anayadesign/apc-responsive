@@ -1,0 +1,12 @@
+<art:body>
+  <!-- Search box content -->
+  <div id="headerSearchContainer" class="floatLeft">
+    <form art:link="action" action="/gallery.asp" method="get" id="forSearch" name="forSearch" onSubmit="trackGAEvent('SelectSearch','Header');">
+      <input art:link="value" type="hidden" value="/getthumb.asp" name="startat" />
+      <input type="text" class="searchBoxText" id="txtSearch" name="txtSearch" autocomplete="off" />
+      <input type="hidden" name="CID" art:sessionId="htmlAttribute:value" value="#" />
+      <input type="submit" class="searchButton" value="Search" id="headerSearchButton" />
+    </form>
+  </div>
+  <!-- End of Search box content -->
+</art:body>

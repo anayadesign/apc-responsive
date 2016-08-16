@@ -5,12 +5,22 @@
 <head>
   {%include 'partials/meta.njk' %}
   {%include 'partials/links.njk' %}
-
 </head>
 <body id="mainBody">
   <div id="pageContainer">
-    <!-- You write code for this content block in another file -->
-    {% block content %} {% endblock %}
+    <header>
+      {% include 'partials/header/index.html' %}
+    </header>
+    <div class="cellmaincontent" id="main">
+      <div id="tpl-row">
+        <div class="tpl-cbs">
+          {% block content %} {% endblock %}
+        </div>
+      </div>
+    </div>
+    <footer>
+      {% include 'partials/footer/index.html' %}
+    </footer>
   </div>
 
   {%include 'partials/scripts.njk' %}

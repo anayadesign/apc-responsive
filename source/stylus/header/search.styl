@@ -1,0 +1,44 @@
+#headerSearchContainer {
+  display: none;
+}
+@media screen and (min-width: 1008px) {
+  #headerSearchContainer {
+    display: block;
+    padding: 5px
+  }
+  #headerSearchContainer #forSearch:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+  #headerSearchContainer .searchBoxText,
+  #headerSearchContainer .searchButton {
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
+  #headerSearchContainer .searchBoxText {
+    font-family: $font-family-text;
+    font-weight: bold;
+    font-size: 12px;
+    color: #666;
+    border: 1px solid #4C5055;
+    height: 24px;
+    width: 200px;
+    padding-left: 5px;
+    padding-top: 0;
+    box-sizing: border-box;
+  }
+  #headerSearchContainer .searchButton {
+    background: #da2d2f;
+    background: linear-gradient(to bottom,#da2d2f 0,#91191b 100%);
+    text-transform: uppercase;
+    height: 100%;
+    padding: 6px;
+    font-family: $font-family-text;
+    font-size: 12px;
+    line-height: 12px;
+    cursor: pointer;
+    border: 0;
+  }
+}
