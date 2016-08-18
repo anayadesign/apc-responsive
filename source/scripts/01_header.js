@@ -7,6 +7,13 @@ $(function() {
     $('body').toggleClass('bodyAllowHelp');
     return false;
   });
+  // Toggle off-canvas close, on gray overlay click. .off-canvas-active #main:before
+  $(document).on('click', '.off-canvas-active #main', function(e) {
+    e.preventDefault();
+    $('#pageContainer').toggleClass('off-canvas-active');
+    $('body').toggleClass('bodyAllowHelp');
+    return false;
+  });
 
   //Prepends help box to first-child of body
   if (document.location.href.indexOf('www.allposters.com.au') > -1) {
@@ -44,17 +51,17 @@ $(function() {
   });
 
   //Search bar
-  $("#hdr-bar-cell-empty").hide();
-  $("#hdr-search-bar").hide();
+  //$("#hdr-bar-cell-empty").hide();
+  //$("#hdr-search-bar").hide();
   $(document).on('click', '#hdr-search-icon', function (e) {
       e.preventDefault();
       $("#hdr-search-icon").hide();
-      $("#hdr-search-bar").slideDown();
+      $(".nav-main--search").slideDown();
   });
 
   $(window).scroll(function () {
       if ($(document).scrollTop() > 100) {
-          $("#hdr-search-bar").hide();
+          $(".nav-main--search").hide();
           $("#hdr-search-icon").show();
       }
   });
