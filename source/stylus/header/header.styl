@@ -22,7 +22,7 @@
 
 header {
   width: 100%;
-  background: #333;
+  background: $color-black;
   color: #FFF;
   font-size: 16px;
 }
@@ -71,6 +71,22 @@ header nav:after {
     width: auto;
   }
 }
+.nav-main .mobile {
+  float: left;
+}
+@media screen and (min-width: 1008px) {
+  .nav-main {
+    padding: 10px;
+  }
+  .nav-main a {
+    color: #FFF;
+    text-decoration: none;
+  }
+  .nav-main a:hover {
+    color: #FFF;
+    text-decoration: underline;
+  }
+}
 
 .nav-menu {
   width: 80%;
@@ -80,7 +96,7 @@ header nav:after {
   overflow-x: hidden;
   top: 0;
   left: -80%;
-  background: #BBB;
+  background: $color-black
   padding: 0 0 30px;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -108,9 +124,6 @@ header nav:after {
   }
 }
 
-.nav-main .mobile {
-  float: left;
-}
 
 .hamburger,
 .search-mobile {
@@ -124,12 +137,13 @@ header nav:after {
 }
 
 #pageContainer.off-canvas-active #main,
-#pageContainer.off-canvas-active .nav-main {
+#pageContainer.off-canvas-active .nav-main,
+#pageContainer.off-canvas-active footer {
   left: 80%;
   position: relative;
 }
 
-
+@import "nav-main"
 @import "dropdown"
 @import "loginTray"
 @import "search"

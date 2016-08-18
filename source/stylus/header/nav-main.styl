@@ -1,0 +1,70 @@
+#headerTop,
+.headerTop {
+  display: none;
+}
+@media screen and (min-width: 1008px) {
+  #headerTop,
+  .headerTop {
+    float: right;
+    display: block;
+    padding-right: 0;
+    font-size: 13px;
+    box-sizing: border-box;
+  }
+}
+.headerTop #headerMLS {
+  float: none;
+  display: inline-block;
+  background-color: #FFF;
+  padding: 2px;
+  color: #C62018;
+  margin-top: 0;
+  margin-left: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.headerVP {
+  display:none;
+}
+@media screen and (min-width: 1008px) {
+  .headerVP {
+    display: block;
+    float: right;
+  }
+  .headerVP .headerValueProp {
+    float: none;
+    display: inline;
+  }
+  .headerVP .headerValueProp:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .headerVP .valuePropsDividerLog  {
+    float: none;
+    display: inline;
+    margin: 0;
+    color: white;
+  }
+}
+
+.nav-main--content #headerCart {
+  margin-top: 0;
+  color: #FFF;
+  clear: right;
+}
+
+.nav-main--content #headerCart a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.nav-main--content #headerCart a:hover {
+  text-decoration: underline;
+  color: #FFF;
+}
+
+.nav-main--content #headerCart #cartCount {
+  float: none;
+}
