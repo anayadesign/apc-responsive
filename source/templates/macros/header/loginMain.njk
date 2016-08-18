@@ -1,7 +1,7 @@
 {% macro login(logState='true') %}
 {%if logState == 'true' %}
 <art:content rule="loggedin">
-  <div class="headerValueProp" id="MyA_Acct" style="text-decoration: none;"> My Account
+  <span id="MyA_Acct" class="myAcct-dropdown"> My Account
     <div id="DD_outCont">
       <div id="DD_inCont">
         <div id="DD_arw"></div>
@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </span>
 </art:content>
 {% endif %}
 {%if logState == 'false' %}
