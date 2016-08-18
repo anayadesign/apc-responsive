@@ -44,13 +44,15 @@
         {% import 'macros/header/loginMain.njk' as loginMain %}
         {{loginMain.login('false')}}
       </div>
-      <span class="mobile-inline favorites"><svg width="25px" height="20px" viewBox="0 0 15 10" aria-labelledby="title desc" fill="#FFF">
+      <span class="mobile-inline favorites" onClick="window.location.href = getProfileKey() + 'gallery/';"><svg width="25px" height="20px" viewBox="0 0 15 10" aria-labelledby="title desc" fill="#FFF">
         <title>Favorites Icon</title>
         <desc>A heart icon.</desc>
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"></use>
       </svg></span>
     </div>
-    <art:cmsContentBlock path="content-blocks/common/header/responsive/other/search"></art:cmsContentBlock>
+    <div class="nav-main--search">
+      <art:cmsContentBlock path="content-blocks/common/header/responsive/other/search"></art:cmsContentBlock>
+    </div>
   </nav>
   <nav class="nav-menu">
     <!--bottom Header-->
@@ -123,4 +125,5 @@
       </ul>
     </div>
   </nav>
+
 </art:body>
