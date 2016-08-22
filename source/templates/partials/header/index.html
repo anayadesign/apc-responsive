@@ -24,7 +24,9 @@
       </a>
     </div>
     <div class="both logo">
-      <img src="http://cache1.allpostersimages.com/images/INTL/allposters/logo/white/r.png" alt="logo" />
+      <a href="/">
+        <img src="http://cache1.allpostersimages.com/images/INTL/allposters/logo/white/r.png" alt="logo" />
+      </a>
     </div>
     <div class="nav-main--content">
       <div id="headerTop" class="headerTop help">
@@ -50,13 +52,32 @@
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"></use>
       </svg></span>
     </div>
-    <div class="nav-main--search">
+    <div class="nav-main--search" style="display: none;">
       <art:cmsContentBlock path="content-blocks/common/header/responsive/other/search"></art:cmsContentBlock>
+
+      <div id="headerSearchContainer-mobile" class="searchBar searchBar-mobile floatLeft">
+        <form art:link="action" action="/gallery.asp" method="get" id="forSearch" name="forSearch" onSubmit="trackGAEvent('SelectSearch','Header');">
+          <input type="hidden" art:link="value" value="/getthumb.asp" name="startat" />
+          <input type="text" class="searchBoxText" id="txtSearch" name="txtSearch" autocomplete="off" placeholder="Search AllPosters"/>
+          <input type="hidden" name="CID" art:sessionId="htmlAttribute:value" value="#" />
+          <input type="submit" class="searchButton" value="Search" id="headerSearchButton" />
+        </form>
+      </div>
+
     </div>
   </nav>
   <nav class="nav-menu">
     <!--bottom Header-->
-    {%include 'partials/header/search.njk' %}
+
+    <div id="headerSearchContainer" class="searchBar searchBar-desktop floatLeft">
+      <form art:link="action" action="/gallery.asp" method="get" id="forSearch" name="forSearch" onSubmit="trackGAEvent('SelectSearch','Header');">
+        <input art:link="value" type="hidden" value="/getthumb.asp" name="startat" />
+        <input type="text" class="searchBoxText" id="txtSearch" name="txtSearch" autocomplete="off" />
+        <input type="hidden" name="CID" art:sessionId="htmlAttribute:value" value="#" />
+        <input type="submit" class="searchButton" value="Search" id="headerSearchButton" />
+      </form>
+    </div>
+
     {% import 'macros/header/loginTray.njk' as loginTray %}
     {{loginTray.login('false')}}
     <ul class="both menu accordion">

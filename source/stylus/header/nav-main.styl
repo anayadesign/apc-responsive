@@ -1,10 +1,11 @@
-#headerTop,
-.headerTop {
+
+.nav-main #headerTop,
+.nav-main .headerTop {
   display: none;
 }
 @media screen and (min-width: 1008px) {
-  #headerTop,
-  .headerTop {
+  .nav-main #headerTop,
+  .nav-main .headerTop {
     float: right;
     display: block;
     padding-right: 0;
@@ -12,7 +13,19 @@
     box-sizing: border-box;
   }
 }
-.headerTop #headerMLS {
+.nav-main .hamburger,
+.nav-main .search-mobile,
+.nav-main .favorites,
+.nav-main .headrCart {
+  width: 44px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.nav-main .favorites {
+  width: 12.5%;
+}
+.nav-main .headerTop #headerMLS {
   float: none;
   display: inline-block;
   background-color: #FFF;
@@ -25,33 +38,33 @@
   cursor: pointer;
 }
 
-.headerVP {
+.nav-main .headerVP {
   display:none;
 }
 @media screen and (min-width: 1008px) {
-  .headerVP {
+  .nav-main .headerVP {
     display: block;
     float: right;
   }
-  .headerVP .headerValueProp {
+  .nav-main .headerVP .headerValueProp {
     float: none;
     display: inline;
   }
-  .headerVP .headerValueProp:hover {
+  .nav-main .headerVP .headerValueProp:hover {
     text-decoration: underline;
     cursor: pointer;
   }
-  .headerVP .valuePropsDividerLog  {
+  .nav-main .headerVP .valuePropsDividerLog  {
     float: none;
     display: inline;
     margin: 0;
     color: white;
   }
-  .myAcct-dropdown {
+  .nav-main .myAcct-dropdown {
     display: inline;
     position: relative;
   }
-  .myAcct-dropdown #DD_outCont {
+  .nav-main .myAcct-dropdown #DD_outCont {
     left:0;
   }
 }
@@ -60,6 +73,9 @@
   margin-top: 0;
   color: #FFF;
   clear: right;
+  width: 12.5%;
+  position: relative;
+  padding-left: 0;
 }
 
 .nav-main--content #headerCart a {
@@ -74,4 +90,13 @@
 
 .nav-main--content #headerCart #cartCount {
   float: none;
+  position: absolute;
+}
+.nav-main--search {
+  clear: both;
+}
+@media screen and (min-width: 1008px) {
+  .nav-main--search {
+    display: none !important;
+  }
 }
