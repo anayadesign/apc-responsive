@@ -1,18 +1,23 @@
 $(function() {
   // Toggle off-canvas on Click
-  $(document).on('click', '.off-canvas-trigger', function() {
-    var transitionClass = $(this).data('transition');
-    $('#global-center, #global-center + .tpl_cb').addClass(transitionClass);
+  function offcanvasInit() {
     $('#pageContainer').toggleClass('off-canvas-active');
     $('body').toggleClass('bodyAllowHelp');
     return false;
+  }
+  $(document).on('click', '.off-canvas-trigger', function() {
+    var transitionClass = $(this).data('transition');
+    $('#global-center, #global-center + .tpl_cb').addClass(transitionClass);
+    offcanvasInit();
   });
   // Toggle off-canvas close, on gray overlay click. .off-canvas-active #main:before
   $(document).on('click', '.off-canvas-active #main', function(e) {
     e.preventDefault();
-    $('#pageContainer').toggleClass('off-canvas-active');
-    $('body').toggleClass('bodyAllowHelp');
-    return false;
+    offcanvasInit();
+  });
+  $(document).on('click', '.off-canvas-active .tableContainer', function(e) {
+    e.preventDefault();
+    offcanvasInit();
   });
 
   //Prepends help box to first-child of body
