@@ -103,63 +103,75 @@
     </ul>
     <div class="dropdown-footer">
       <div class="dropdown-footer-email">
-      <h2>Get notified about special offers and<br><span class="blue-text">Get 20% off your next order.</span></h2>
-      <form id="hdrEmailForm" method="post" action="/ADC.Net/Root/Pages/Email/Email_accept.aspx" onsubmit="return validateEmailHeader();">
-        <p class="error">Please enter a valid email address</p>
-        <input type="text" id="hdrEmailInput" class="input hdr-email-input" name="email_address_" placeholder="Email Address">
-        <input type="submit" class="hdr-email-button" value="SUBMIT">
-        <input type="hidden" value="US" name="country_iso2" id="country_iso2">
-        <input type="hidden" value="en" name="language_iso2" id="language_iso2">
-        <input type="hidden" value="allposters.com" name="site_domain" id="site_domain">
-        <input type="hidden" value="I" name="EMAIL_PERMISSION_STATUS_">
-        <input type="hidden" value="I" name="EMAIL_TRIGGER_PERMISSION">
-        <input type="hidden" value="I" name="EMAIL_PROMO_PERMISSION">
-        <input type="hidden" value="00-000049" name="email_acq_source">
-        <input type="hidden" value="" name="email_acq_dt">
-        <input type="hidden" value="APC" name="brand_id">
-        <input type="hidden" name="_ri_" value="X0Gzc2X%3DWQpglLjHJlYQGu5zcXj9By7cpzdApidMN0OO3OahzfvVwjpnpgHlpgneHmgJoXX0Gzc2X%3DWQpglLjHJlYQGg0zf2pKMO3sIcmBWzbeyRpswpJkjS">
-      </form>
-      <div id="header_email_capture" class="emailCapture-menu">
-      	<div class="header_email_capture_close">
-      		<div class="hdrEmailClose apcSprite"></div>
-      	</div>
-      	<div class="header_email_capture_content">
-      		Be the first to know about our exclusive promotions &amp; discounts!
-      	</div>
-      	<form method="post" class="emailSignUp" id="emailSignUpHeader" action="/ADC.Net/Root/Pages/Email/Email_accept.aspx" onsubmit="return validateEmailHeader();">
-      		<div class="emailSignUpError">
-      			Please enter a valid email address
-      		</div>
-      		<input type="text" id="emailSignUpHeaderInput" class="emailSignUpInput" name="email" />
-      		<input type="submit" id="emailSignUpHeaderSubmit" class="emailSignUpSubmit" value="Sign up for Special Offers" />
-      		<span id="emailSignUpHeaderDefaultText" class="hidden" >Enter Email Address</span>
-      	</form>
+        <h2>Get notified about special offers and<br><span class="blue-text">Get 20% off your next order.</span></h2>
+        <div id="header_email_capture" class="emailCapture-menu">
+        	<form method="post" class="emailSignUp" id="emailSignUpHeader" action="/ADC.Net/Root/Pages/Email/Email_accept.aspx" onsubmit="return validateEmailHeader();">
+        		<div class="emailSignUpError">
+        			Please enter a valid email address
+        		</div>
+        		<input type="text" id="emailSignUpHeaderInput" class="emailSignUpInput" name="email" placeholder="Email Address" />
+        		<input type="submit" id="emailSignUpHeaderSubmit" class="emailSignUpSubmit" value="Submit" />
+        		<span id="emailSignUpHeaderDefaultText" class="hidden" >Enter Email Address</span>
+        	</form>
+        </div>
       </div>
       <div class="hdr-social">
-        <a href="https://www.facebook.com/AllPosters">
-          <svg class="social-icon" id="facebook" viewBox="0 0 48 48" height="61" width="61">
-            <path d="M24,0C10.7,0,0,10.8,0,24.1c0,12,8.7,21.9,20.2,23.8V31.6h-5.6v-6.6h5.6v-4.8c0-5.6,3.4-8.7,8.4-8.7 c2.4,0,4.4,0.2,5,0.3v5.9l-3.5,0c-2.7,0-3.2,1.3-3.2,3.2v4.2h6.5l-0.8,6.6h-5.6V48C38.8,46.5,48,36.4,48,24.1C48,10.8,37.3,0,24,0z"></path>
-          </svg>
-        </a>
-        <a href="https://twitter.com/AllPosters">
-          <svg class="social-icon last" id="twitter" viewBox="0 0 48 48" height="61" width="61">
-            <path d="M24,0C10.7,0,0,10.7,0,24c0,13.3,10.7,24,24,24c13.3,0,24-10.7,24-24C48,10.7,37.3,0,24,0z M36.4,18.7 c0,0.3,0,0.5,0,0.8c0,7.9-6,17.1-17.1,17.1c-3.4,0-6.5-1-9.2-2.7c0.5,0.1,0.9,0.1,1.4,0.1c2.8,0,5.4-1,7.4-2.6 c-2.6,0-4.8-1.8-5.6-4.2c0.4,0.1,0.7,0.1,1.1,0.1c0.5,0,1.1-0.1,1.6-0.2c-2.7-0.6-4.8-3-4.8-5.9v-0.1c0.8,0.4,1.7,0.7,2.7,0.7 c-1.6-1.1-2.7-2.9-2.7-5c0-1.1,0.3-2.1,0.8-3c3,3.6,7.4,6,12.4,6.3c-0.1-0.4-0.2-0.9-0.2-1.4c0-3.3,2.7-6,6-6c1.7,0,3.3,0.7,4.4,1.9 c1.4-0.3,2.6-0.8,3.8-1.5c-0.4,1.4-1.4,2.6-2.6,3.3c1.2-0.1,2.4-0.5,3.4-0.9C38.5,16.8,37.5,17.8,36.4,18.7z"></path>
-          </svg>
-        </a>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/AllPosters">
+              <svg class="social-icon" id="facebook" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
+                <path d="M24,0C10.7,0,0,10.8,0,24.1c0,12,8.7,21.9,20.2,23.8V31.6h-5.6v-6.6h5.6v-4.8c0-5.6,3.4-8.7,8.4-8.7 c2.4,0,4.4,0.2,5,0.3v5.9l-3.5,0c-2.7,0-3.2,1.3-3.2,3.2v4.2h6.5l-0.8,6.6h-5.6V48C38.8,46.5,48,36.4,48,24.1C48,10.8,37.3,0,24,0z"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://plus.google.com/u/0/+allposters/posts">
+              <svg class="social-icon" id="gplus" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
+                <path d="M24,0C10.7,0,0,10.7,0,24s10.7,24,24,24c13.3,0,24-10.7,24-24S37.3,0,24,0z M18.1,35 c-5.7,0-10.4-4.6-10.4-10.4c0-5.7,4.6-10.4,10.4-10.4c2.7,0,5.1,1,7,2.7c-2.2,2-2.1,2.2-2.9,3c-1.1-0.9-2.2-1.5-4-1.5 c-3.4,0-6,2.8-6,6.2c0,3.4,2.7,6.2,6,6.2c3.4,0,4.7-1.4,5.6-4.1c-1.6,0-5.6,0-5.6,0v-4.1c0,0,7.9,0,9.9,0C28.7,27.6,26.7,35,18.1,35 z M37.5,25.9v3.7h-2.6v-3.7h-3.7v-2.6h3.7v-3.6h2.6v3.6H41v2.6H37.5z"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://pinterest.com/AllPosters/">
+              <svg class="social-icon" id="pinterest" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
+                <path d="M24,0C10.7,0,0,10.7,0,24c0,9.8,5.9,18.3,14.4,22c-0.1-1.7,0-3.7,0.4-5.5c0.5-2,3.1-13.1,3.1-13.1 s-0.8-1.5-0.8-3.8c0-3.6,2.1-6.2,4.6-6.2c2.2,0,3.2,1.6,3.2,3.6c0,2.2-1.4,5.5-2.1,8.5c-0.6,2.5,1.3,4.6,3.8,4.6 c4.5,0,7.6-5.8,7.6-12.8c0-5.3-3.5-9.2-10-9.2c-7.3,0-11.8,5.4-11.8,11.5c0,2.1,0.6,3.6,1.6,4.7c0.4,0.5,0.5,0.7,0.3,1.3 c-0.1,0.4-0.4,1.5-0.5,1.9c-0.2,0.6-0.7,0.8-1.2,0.6c-3.4-1.4-4.9-5-4.9-9.2c0-6.8,5.7-15,17.2-15c9.2,0,15.2,6.6,15.2,13.7 c0,9.4-5.2,16.4-13,16.4c-2.6,0-5-1.4-5.9-3c0,0-1.4,5.5-1.7,6.6c-0.5,1.8-1.5,3.7-2.4,5.1c2.2,0.6,4.4,1,6.8,1 c13.3,0,24-10.7,24-24C48,10.7,37.3,0,24,0z"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/AllPosters/">
+              <svg class="social-icon" id="instagram" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
+                <g>
+                  <path d="M30.1,18.9h3c0.7,0,1.2-0.5,1.2-1.2v-2.9c0-0.7-0.5-1.2-1.2-1.2h-3c-0.7,0-1.2,0.5-1.2,1.2v2.9
+                  C28.9,18.3,29.5,18.9,30.1,18.9z"></path>
+                  <ellipse cx="24" cy="23.9" rx="5.4" ry="5.2"></ellipse>
+                  <path d="M24,0C10.7,0,0,10.7,0,24c0,13.3,10.7,24,24,24c13.3,0,24-10.7,24-24C48,10.7,37.3,0,24,0z M37.4,34 c0,1.9-1.5,3.4-3.4,3.4H14c-1.9,0-3.4-1.5-3.4-3.4V14c0-1.9,1.5-3.4,3.4-3.4H34c1.9,0,3.4,1.5,3.4,3.4V34z"></path>
+                  <path d="M32.4,24.2c0,4.5-3.7,8.1-8.3,8.1c-4.6,0-8.3-3.6-8.3-8.1c0-0.8,0.1-1.6,0.3-2.3h-2.5v11.3 c0,0.6,0.5,1.1,1.1,1.1h18.7c0.6,0,1.1-0.5,1.1-1.1V21.9H32C32.2,22.7,32.4,23.4,32.4,24.2z"></path>
+                </g>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/AllPosters">
+              <svg class="social-icon last" id="twitter" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
+                <path d="M24,0C10.7,0,0,10.7,0,24c0,13.3,10.7,24,24,24c13.3,0,24-10.7,24-24C48,10.7,37.3,0,24,0z M36.4,18.7 c0,0.3,0,0.5,0,0.8c0,7.9-6,17.1-17.1,17.1c-3.4,0-6.5-1-9.2-2.7c0.5,0.1,0.9,0.1,1.4,0.1c2.8,0,5.4-1,7.4-2.6 c-2.6,0-4.8-1.8-5.6-4.2c0.4,0.1,0.7,0.1,1.1,0.1c0.5,0,1.1-0.1,1.6-0.2c-2.7-0.6-4.8-3-4.8-5.9v-0.1c0.8,0.4,1.7,0.7,2.7,0.7 c-1.6-1.1-2.7-2.9-2.7-5c0-1.1,0.3-2.1,0.8-3c3,3.6,7.4,6,12.4,6.3c-0.1-0.4-0.2-0.9-0.2-1.4c0-3.3,2.7-6,6-6c1.7,0,3.3,0.7,4.4,1.9 c1.4-0.3,2.6-0.8,3.8-1.5c-0.4,1.4-1.4,2.6-2.6,3.3c1.2-0.1,2.4-0.5,3.4-0.9C38.5,16.8,37.5,17.8,36.4,18.7z"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
       </div>
-    </div>
-      <ul class="dropdown__list dropdown-footer-list">
-        <li>
-          <a href="#" rel="nofollow">Track my order</a>
-        </li>
-        <li>
-          <a href="#" rel="nofollow">Terms &amp; policies</a>
-        </li>
-        <li>
-          <a href="#" rel="nofollow">About AllPosters</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <ul class="dropdown__list dropdown-footer-list">
+      <li>
+        <a href="/ADC.Net/Root/Pages/Tracking/OrderTracking.aspx" rel="nofollow">Track my order</a>
+      </li>
+      <li>
+        <a href="/help/terms.html" rel="nofollow">Terms &amp; policies</a>
+      </li>
+      <li>
+        <a href="/help/aboutus.html" rel="nofollow">About AllPosters</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
 </art:body>

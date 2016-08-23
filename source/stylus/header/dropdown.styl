@@ -283,7 +283,9 @@ li {
     border-top: 0px !important;
   }
 }
-
+.dropdown-footer * {
+  box-sizing: border-box;
+}
 .dropdown-footer h2 {
   margin: 0 0 0
   font-family: $font-family-brand-heading
@@ -293,11 +295,24 @@ li {
   text-transform: uppercase;
 }
 .dropdown-footer .dropdown-footer-email {
-  padding: 0 30px 0
+  padding: 0 12px 0
 }
-
-.dropdown-footer .dropdown-footer-email .hdr-email-input,
-.dropdown-footer .dropdown-footer-email .hdr-email-button {
+.dropdown-footer-email #header_email_capture.emailCapture-menu {
+  display: block;
+  width: auto;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  position: static;
+  padding: 0;
+}
+.dropdown-footer .dropdown-footer-email .emailSignUpInput {
+  height: auto;
+  width: 100%;
+  max-width: 235px;
+}
+.dropdown-footer .dropdown-footer-email .emailSignUpInput,
+.dropdown-footer .dropdown-footer-email .emailSignUpSubmit {
   margin: 0;
   padding: 15px;
   -webkit-appearance: none;
@@ -307,13 +322,52 @@ li {
   font-size: 16px;
   border: none;
 }
-.dropdown-footer .dropdown-footer-email .hdr-email-button {
+.dropdown-footer .dropdown-footer-email .emailSignUpSubmit {
   background: $color-brand-red
   color: #FFF;
   font-family: $font-family-brand-heading
   font-size: 24px
   line-height: .9
 }
+
+.dropdown-footer .hdr-social {
+  padding: 12px;
+}
+.dropdown-footer .hdr-social ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+@media screen and (min-width: 415px) {
+  .dropdown-footer .hdr-social ul {
+    width: 306px;
+  }
+}
+.dropdown-footer .hdr-social ul:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+.dropdown-footer .hdr-social ul li, .hdr-social ul li a {
+  text-decoration: none;
+  font-weight: normal;
+  line-height: 17px;
+}
+
+.dropdown-footer .hdr-social li {
+  display: block;
+  padding: 0 3px;
+  width: 20%;
+  float: left;
+}
+.dropdown-footer .hdr-social .social-icon {
+  fill: #FFF;
+  width: 100%;
+  height: auto;
+}
+
+
 .dropdown-footer .dropdown-footer-list li a {
   display: block;
   padding: 14px 0 14px 14px;
