@@ -21,9 +21,26 @@
   text-align: center;
   padding-top: 10px;
 }
+.nav-main .logo {
+  width: calc(100% - 176px);
+  float: left;
+}
 
+.nav-main .logo img {
+  display: block;
+  width: 100%;
+  max-width: 275px;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1008px) {
+  .nav-main .logo {
+    width: auto;
+  }
+}
 .nav-main .favorites {
-  width: 12.5%;
+  float: right;
 }
 .nav-main .headerTop #headerMLS {
   float: none;
@@ -73,14 +90,20 @@
   margin-top: 0;
   color: #FFF;
   clear: right;
-  width: 12.5%;
   position: relative;
   padding-left: 0;
+}
+@media screen and (min-width: 1008px) {
+  .nav-main--content #headerCart {
+    width: 12.5%;
+    text-align: right;
+  }
 }
 
 .nav-main--content #headerCart a {
   text-decoration: none;
   color: #FFF;
+  position: relative;
 }
 
 .nav-main--content #headerCart a:hover {
@@ -88,9 +111,41 @@
   color: #FFF;
 }
 
-.nav-main--content #headerCart #cartCount {
-  float: none;
-  position: absolute;
+.nav-main--content #headerCart #cartCountText {
+    background: $color-red;
+    border-radius: 10px;
+    color: white;
+    display: block;
+    text-align: center;
+    height: 0;
+    min-width: 10px;
+    padding: 8px 3px;
+    position: absolute;
+    left: 15px;
+    top: -10px;
+    vertical-align: middle;
+    font-size: 10px;
+    font-weight: normal;
+    z-index: 1;
+    font-family: $font-family-text
+    line-height: 0;
+}
+@media screen and (min-width: 1008px) {
+  .nav-main--content #headerCart #cartCountText:before {
+    content: '(';
+  }
+  .nav-main--content #headerCart #cartCountText:after {
+    content: ')';
+  }
+  .nav-main--content #headerCart #cartCountText {
+      position: static;
+      width: auto;
+      display: inline;
+      background: transparent;
+      color: white;
+      font-size: 14px;
+      vertical-align: baseline;
+  }
 }
 .nav-main--search {
   clear: both;
