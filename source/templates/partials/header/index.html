@@ -38,8 +38,7 @@
             <title>Search Icon</title>
             <desc>A shopping cart icon.</desc>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart"></use>
-          </svg><span class="desktop-inline">Cart</span></a>
-          <span id="cartCount">(<span id="cartCountText">0</span>)</span>
+          </svg><span class="desktop-inline">Cart</span><span id="cartCountText">0</span></a>
       </div>
       <div class="headerVP">
         <span class="desktop-inline valueprops"><a href="/our-products/overview">Our Products</a> | <a href="/services/frames">Frames &amp; More</a> | <span class="headerValueProp" onClick="window.location.href = getProfileKey() + 'gallery/';">My Favorites</span> |<art:cmsContentBlock path="content-blocks/common/header/responsive/other/valueprops"></art:cmsContentBlock></span>
@@ -120,6 +119,22 @@
         <input type="hidden" value="APC" name="brand_id">
         <input type="hidden" name="_ri_" value="X0Gzc2X%3DWQpglLjHJlYQGu5zcXj9By7cpzdApidMN0OO3OahzfvVwjpnpgHlpgneHmgJoXX0Gzc2X%3DWQpglLjHJlYQGg0zf2pKMO3sIcmBWzbeyRpswpJkjS">
       </form>
+      <div id="header_email_capture" class="emailCapture-menu">
+      	<div class="header_email_capture_close">
+      		<div class="hdrEmailClose apcSprite"></div>
+      	</div>
+      	<div class="header_email_capture_content">
+      		Be the first to know about our exclusive promotions &amp; discounts!
+      	</div>
+      	<form method="post" class="emailSignUp" id="emailSignUpHeader" action="/ADC.Net/Root/Pages/Email/Email_accept.aspx" onsubmit="return validateEmailHeader();">
+      		<div class="emailSignUpError">
+      			Please enter a valid email address
+      		</div>
+      		<input type="text" id="emailSignUpHeaderInput" class="emailSignUpInput" name="email" />
+      		<input type="submit" id="emailSignUpHeaderSubmit" class="emailSignUpSubmit" value="Sign up for Special Offers" />
+      		<span id="emailSignUpHeaderDefaultText" class="hidden" >Enter Email Address</span>
+      	</form>
+      </div>
       <div class="hdr-social">
         <a href="https://www.facebook.com/AllPosters">
           <svg class="social-icon" id="facebook" viewBox="0 0 48 48" height="61" width="61">
