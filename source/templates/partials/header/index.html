@@ -23,24 +23,60 @@
         </svg>
       </a>
     </div>
-    <div class="both logo"> <img src="http://cache1.allpostersimages.com/images/INTL/allposters/logo/white/r.png" alt="logo" /> </div>
-    <div>
-      <div class="desktop help"> Need Help? 888-654-0143 | Sign up for Special Offers | Track Your Order | Help | Español </div>
-      <div>
-        <span class="desktop-inline valueprops">Our products | Frames | Favorites | <art:cmsContentBlock path="content-blocks/common/header/responsive/other/valueprops"></art:cmsContentBlock></span> <span class="mobile-inline favorites">favorites</span>
-        <div class="headrCart" id="headerCart">
-          <a onclick="trackGAEvent('SelectCart','Header');" href="/gallery.asp?startat=/viewcart.asp" style="color: #FFF;">Cart</a>
-          <span id="cartCount"> (<span id="cartCountText">0</span>) </span>
-        </div>
+    <div class="both logo">
+      <a href="/">
+        <img src="http://cache1.allpostersimages.com/images/INTL/allposters/logo/white/r.png" alt="logo" />
+      </a>
+    </div>
+    <div class="nav-main--content">
+      <div id="headerTop" class="headerTop help">
+        Need Help? 888-654-0143 | Sign up for Special Offers | Track Your Order | Help <span id="headerMLS" onclick="fnChangePageLanguage('es','en','en')">Español</span><span class="hidden" id="mlsGaTrack">true</span>
+      </div>
+      <div class="headrCart" id="headerCart">
+        <a onclick="trackGAEvent('SelectCart','Header');" href="/gallery.asp?startat=/viewcart.asp">
+          <svg width="25px" height="20px" viewBox="0 0 11.1 9.4" aria-labelledby="title desc" fill="#FFF">
+            <title>Search Icon</title>
+            <desc>A shopping cart icon.</desc>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart"></use>
+          </svg><span class="desktop-inline">Cart</span><span id="cartCountText">0</span></a>
+      </div>
+      <div class="headerVP">
+        <span class="desktop-inline valueprops"><a href="/our-products/overview">Our Products</a> | <a href="/services/frames">Frames &amp; More</a> | <span class="headerValueProp" onClick="window.location.href = getProfileKey() + 'gallery/';">My Favorites</span> |<art:cmsContentBlock path="content-blocks/common/header/responsive/other/valueprops"></art:cmsContentBlock></span>
         {% import 'macros/header/loginMain.njk' as loginMain %}
         {{loginMain.login('false')}}
       </div>
+      <span class="mobile-inline favorites" onClick="window.location.href = getProfileKey() + 'gallery/';"><svg width="25px" height="20px" viewBox="0 0 15 10" aria-labelledby="title desc" fill="#FFF">
+        <title>Favorites Icon</title>
+        <desc>A heart icon.</desc>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"></use>
+      </svg></span>
     </div>
-    <art:cmsContentBlock path="content-blocks/common/header/responsive/other/search"></art:cmsContentBlock>
+    <div class="nav-main--search" style="display: none;">
+      <art:cmsContentBlock path="content-blocks/common/header/responsive/other/search"></art:cmsContentBlock>
+
+      <div id="headerSearchContainer-mobile" class="searchBar searchBar-mobile floatLeft">
+        <form art:link="action" action="/gallery.asp" method="get" id="forSearch" name="forSearch" onSubmit="trackGAEvent('SelectSearch','Header');">
+          <input type="hidden" art:link="value" value="/getthumb.asp" name="startat" />
+          <input type="text" class="searchBoxText" id="txtSearch" name="txtSearch" autocomplete="off" placeholder="Search AllPosters"/>
+          <input type="hidden" name="CID" art:sessionId="htmlAttribute:value" value="#" />
+          <input type="submit" class="searchButton" value="Search" id="headerSearchButton" />
+        </form>
+      </div>
+
+    </div>
   </nav>
   <nav class="nav-menu">
     <!--bottom Header-->
-    {%include 'partials/header/search.njk' %}
+
+    <div id="headerSearchContainer" class="searchBar searchBar-desktop floatLeft">
+      <form art:link="action" action="/gallery.asp" method="get" id="forSearch" name="forSearch" onSubmit="trackGAEvent('SelectSearch','Header');">
+        <input art:link="value" type="hidden" value="/getthumb.asp" name="startat" />
+        <input type="text" class="searchBoxText" id="txtSearch" name="txtSearch" autocomplete="off" />
+        <input type="hidden" name="CID" art:sessionId="htmlAttribute:value" value="#" />
+        <input type="submit" class="searchButton" value="Search" id="headerSearchButton" />
+      </form>
+    </div>
+
     {% import 'macros/header/loginTray.njk' as loginTray %}
     {{loginTray.login('false')}}
     <ul class="both menu accordion">
@@ -65,5 +101,65 @@
       <art:cmsContentBlock path="content-blocks/common/header/responsive/menus/myphotos"></art:cmsContentBlock>
       {%include 'partials/header/menus/myphotos.html' %}
     </ul>
+    <div class="dropdown-footer">
+      <div class="dropdown-footer-email">
+      <h2>Get notified about special offers and<br><span class="blue-text">Get 20% off your next order.</span></h2>
+      <form id="hdrEmailForm" method="post" action="/ADC.Net/Root/Pages/Email/Email_accept.aspx" onsubmit="return validateEmailHeader();">
+        <p class="error">Please enter a valid email address</p>
+        <input type="text" id="hdrEmailInput" class="input hdr-email-input" name="email_address_" placeholder="Email Address">
+        <input type="submit" class="hdr-email-button" value="SUBMIT">
+        <input type="hidden" value="US" name="country_iso2" id="country_iso2">
+        <input type="hidden" value="en" name="language_iso2" id="language_iso2">
+        <input type="hidden" value="allposters.com" name="site_domain" id="site_domain">
+        <input type="hidden" value="I" name="EMAIL_PERMISSION_STATUS_">
+        <input type="hidden" value="I" name="EMAIL_TRIGGER_PERMISSION">
+        <input type="hidden" value="I" name="EMAIL_PROMO_PERMISSION">
+        <input type="hidden" value="00-000049" name="email_acq_source">
+        <input type="hidden" value="" name="email_acq_dt">
+        <input type="hidden" value="APC" name="brand_id">
+        <input type="hidden" name="_ri_" value="X0Gzc2X%3DWQpglLjHJlYQGu5zcXj9By7cpzdApidMN0OO3OahzfvVwjpnpgHlpgneHmgJoXX0Gzc2X%3DWQpglLjHJlYQGg0zf2pKMO3sIcmBWzbeyRpswpJkjS">
+      </form>
+      <div id="header_email_capture" class="emailCapture-menu">
+      	<div class="header_email_capture_close">
+      		<div class="hdrEmailClose apcSprite"></div>
+      	</div>
+      	<div class="header_email_capture_content">
+      		Be the first to know about our exclusive promotions &amp; discounts!
+      	</div>
+      	<form method="post" class="emailSignUp" id="emailSignUpHeader" action="/ADC.Net/Root/Pages/Email/Email_accept.aspx" onsubmit="return validateEmailHeader();">
+      		<div class="emailSignUpError">
+      			Please enter a valid email address
+      		</div>
+      		<input type="text" id="emailSignUpHeaderInput" class="emailSignUpInput" name="email" />
+      		<input type="submit" id="emailSignUpHeaderSubmit" class="emailSignUpSubmit" value="Sign up for Special Offers" />
+      		<span id="emailSignUpHeaderDefaultText" class="hidden" >Enter Email Address</span>
+      	</form>
+      </div>
+      <div class="hdr-social">
+        <a href="https://www.facebook.com/AllPosters">
+          <svg class="social-icon" id="facebook" viewBox="0 0 48 48" height="61" width="61">
+            <path d="M24,0C10.7,0,0,10.8,0,24.1c0,12,8.7,21.9,20.2,23.8V31.6h-5.6v-6.6h5.6v-4.8c0-5.6,3.4-8.7,8.4-8.7 c2.4,0,4.4,0.2,5,0.3v5.9l-3.5,0c-2.7,0-3.2,1.3-3.2,3.2v4.2h6.5l-0.8,6.6h-5.6V48C38.8,46.5,48,36.4,48,24.1C48,10.8,37.3,0,24,0z"></path>
+          </svg>
+        </a>
+        <a href="https://twitter.com/AllPosters">
+          <svg class="social-icon last" id="twitter" viewBox="0 0 48 48" height="61" width="61">
+            <path d="M24,0C10.7,0,0,10.7,0,24c0,13.3,10.7,24,24,24c13.3,0,24-10.7,24-24C48,10.7,37.3,0,24,0z M36.4,18.7 c0,0.3,0,0.5,0,0.8c0,7.9-6,17.1-17.1,17.1c-3.4,0-6.5-1-9.2-2.7c0.5,0.1,0.9,0.1,1.4,0.1c2.8,0,5.4-1,7.4-2.6 c-2.6,0-4.8-1.8-5.6-4.2c0.4,0.1,0.7,0.1,1.1,0.1c0.5,0,1.1-0.1,1.6-0.2c-2.7-0.6-4.8-3-4.8-5.9v-0.1c0.8,0.4,1.7,0.7,2.7,0.7 c-1.6-1.1-2.7-2.9-2.7-5c0-1.1,0.3-2.1,0.8-3c3,3.6,7.4,6,12.4,6.3c-0.1-0.4-0.2-0.9-0.2-1.4c0-3.3,2.7-6,6-6c1.7,0,3.3,0.7,4.4,1.9 c1.4-0.3,2.6-0.8,3.8-1.5c-0.4,1.4-1.4,2.6-2.6,3.3c1.2-0.1,2.4-0.5,3.4-0.9C38.5,16.8,37.5,17.8,36.4,18.7z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+      <ul class="dropdown__list dropdown-footer-list">
+        <li>
+          <a href="#" rel="nofollow">Track my order</a>
+        </li>
+        <li>
+          <a href="#" rel="nofollow">Terms &amp; policies</a>
+        </li>
+        <li>
+          <a href="#" rel="nofollow">About AllPosters</a>
+        </li>
+      </ul>
+    </div>
   </nav>
+
 </art:body>

@@ -1,23 +1,56 @@
-#headerSearchContainer {
+.searchBar,
+.searchBar * {
+  box-sizing: border-box;
+}
+.searchBar-mobile {
+  display: block;
+  width: 100%;
+  border: none;
+  font-family: $font-family-text
+  font-weight: bold;
+  font-size: 12px;
+  color: $color-gray
+}
+.searchBar-mobile #forSearch {
+  width: 100%;
+  display: block;
+  padding: 8px;
+}
+.searchBar-mobile #forSearch .searchBoxText {
+  width: 100%;
+  padding: 0 5px;
+  font-family: $font-family-text
+  font-weight: normal;
+  color: $color-gray
+  border: none;
+}
+.searchBar-mobile .searchButton {
+  display: none;
+}
+.searchBar-desktop {
   display: none;
 }
 @media screen and (min-width: 1008px) {
-  #headerSearchContainer {
+  .searchBar-mobile {
+    display: none;
+  }
+  .searchBar-desktop {
     display: block;
     padding: 5px
   }
-  #headerSearchContainer #forSearch:after {
+
+  .searchBar.searchBar-desktop #forSearch:after {
     display: table;
     content: '';
     clear: both;
   }
-  #headerSearchContainer .searchBoxText,
-  #headerSearchContainer .searchButton {
+  .searchBar.searchBar-desktop .searchBoxText,
+  .searchBar.searchBar-desktop .searchButton {
     float: left;
     margin: 0;
     padding: 0;
   }
-  #headerSearchContainer .searchBoxText {
+  .searchBar.searchBar-desktop .searchBoxText {
     font-family: $font-family-text;
     font-weight: bold;
     font-size: 12px;
@@ -29,7 +62,7 @@
     padding-top: 0;
     box-sizing: border-box;
   }
-  #headerSearchContainer .searchButton {
+  .searchBar.searchBar-desktop .searchButton {
     background: #da2d2f;
     background: linear-gradient(to bottom,#da2d2f 0,#91191b 100%);
     text-transform: uppercase;

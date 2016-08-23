@@ -2,7 +2,7 @@
   <art:cmsContentBlock path="content-blocks/common/js/emaillightbox"></art:cmsContentBlock>
   <style>
   .email-lb-bg {
-    top: 150px;
+    top: 5%;
     width: 75%;
     height: auto;
     padding: 0;
@@ -20,6 +20,7 @@
   @media screen and (min-width: 940px) {
     .email-lb-bg {
       max-width: 706px;
+      top: 150px;
       width: 706px;
       left: calc(50% - 353px)!important;
     }
@@ -37,11 +38,18 @@
       background-color: #e5e5e5;
       font-family: FetteEngschrift, 'Fette Engschrift', Fette, Arial, sans-serif!important;
       color: #000;
-      font-size: 72px;
+      font-size: 48px;
       text-align: center;
       position: relative;
-      padding: 24px 12px;
+      padding: 12px 6px;
     }
+    @media screen and (min-width: 940px) {
+      .topheader {
+        font-size: 72px;
+        padding: 24px 12px;
+      }
+    }
+
     .email-lb-close {
       display: block;
       position: absolute;
@@ -62,10 +70,14 @@
       text-align: center;
       margin: 18px 0 0;
       color: #000;
-      font-size: 42px;
+      font-size: 32px;
       font-family: FetteEngschrift, 'Fette Engschrift', Fette, Arial, sans-serif!important
     }
-
+    @media screen and (min-width: 940px) {
+      .email-lb-text {
+        font-size: 42px;
+      }
+    }
     .makeitblue {
       color: #00b9ef
     }
@@ -120,7 +132,8 @@
     form#lb-email-form .button {
       width: 100%;
       height: 100%;
-      border: 1px solid transparent !important
+      border: 1px solid transparent !important;
+      border-radius: 0;
       box-sizing: border-box;
       background-color: #d8dd37;
       color: #000!important;
@@ -129,6 +142,7 @@
       border: 0;
       cursor: pointer;
       font-family: FetteEngschrift, 'Fette Engschrift', Fette, Arial, sans-serif!important;
+      -webkit-appearance: none;
     }
     @media screen and (min-width: 452px) {
       form#lb-email-form .button {
@@ -183,9 +197,13 @@
       font-family: Helvetica, Arial, sans-serif;
       font-size: 12px;
       color: #888;
-      margin-top: 48px
+      margin-top: 24px;
     }
-
+    @media screen and (min-width: 940px) {
+      .disclaim {
+        margin-top: 48px;
+      }
+    }
     .asterisk {
       color: #000;
       font-size: 20px;
