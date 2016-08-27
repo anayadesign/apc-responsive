@@ -67,6 +67,7 @@ $(function() {
   $(window).scroll(function () {
       if ($(document).scrollTop() > 100) {
           $(".nav-main--search").hide();
+          $("#autoSuggestDiv").hide();
           $("#hdr-search-icon").show();
       }
   });
